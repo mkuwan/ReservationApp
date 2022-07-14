@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import LayoutClient from "./LayoutClient";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';f
 import ClientMenu from "./contents/ClientMenu/index.";
 import {Login} from "./contents/Login";
 
