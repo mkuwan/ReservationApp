@@ -1,0 +1,12 @@
+[
+  {
+    "ManagerId": "m001",
+    "ManagerName": "マネージャーリーダー",
+    "ManagerLoginId": "ManagerA"
+  },
+  {
+    "ManagerId": "m002",
+    "ManagerName": "サブマネージャー",
+    "ManagerLoginId": "ManagerB"
+  }
+]

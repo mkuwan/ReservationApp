@@ -1,0 +1,22 @@
+[
+  {
+    "ClientId": "c001",
+    "ClientLoginId": "satoh",
+    "ClientName": "佐藤"
+  },
+  {
+    "ClientId": "c002",
+    "ClientLoginId": "suzuki",
+    "ClientName": "鈴木"
+  },
+  {
+    "ClientId": "c003",
+    "ClientLoginId": "tanaka",
+    "ClientName": "田中"
+  },
+  {
+    "ClientId": "c004",
+    "ClientLoginId": "sasaki",
+    "ClientName": "佐々木"
+  }
+]
