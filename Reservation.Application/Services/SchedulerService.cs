@@ -31,6 +31,8 @@ namespace Reservation.Application.Services
         {
             var panel = await _schedulerRepository.GetScheduleAsync(scheduleId);
 
+            if (panel == null) return new NotFoundResult();
+
             return new OkObjectResult(new ScheduleForClientViewModel().DomainModelToViewModelDTO(panel));
         }
 

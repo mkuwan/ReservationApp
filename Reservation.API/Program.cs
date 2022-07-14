@@ -41,22 +41,22 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 // "すべての" ユーザーの認証が要求されます。
 // たとえば、[AllowAnonymous] や [Authorize(PolicyName="MyPolicy")] を使用する Razor Pages、コントローラー、
 // またはアクション メソッドでは、フォールバック認可ポリシーではなく適用された認可属性が使用されます。
-builder.Services.AddAuthorization(options =>
-{
-    // ASP.NET Core でのポリシー ベースの認可
-    // https://docs.microsoft.com/ja-jp/aspnet/core/security/authorization/policies?view=aspnetcore-6.0
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .Build();
-});
+//builder.Services.AddAuthorization(options =>
+//{
+//    // ASP.NET Core でのポリシー ベースの認可
+//    // https://docs.microsoft.com/ja-jp/aspnet/core/security/authorization/policies?view=aspnetcore-6.0
+//    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+//        .RequireAuthenticatedUser()
+//        .Build();
+//});
 
 // CORS
 string AllowSpecificOrigins = "_allowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(AllowSpecificOrigins, builder =>
+    options.AddPolicy(name: AllowSpecificOrigins, policy =>
     {
-        builder.AllowAnyOrigin()
+        policy.AllowAnyOrigin()   // WithOrigins("https://localhost:7093", "https://localhost:7093")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
     });
@@ -81,7 +81,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Seed data to DB
-using(var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope())
 {
     var serviceProvider = scope.ServiceProvider;
     var context = serviceProvider.GetRequiredService<ReservationDbContext>();
@@ -107,6 +107,7 @@ using(var scope = app.Services.CreateScope())
 }
 
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -120,10 +121,11 @@ else
     app.UseHsts();
 }
 
+app.UseRouting();
 app.UseCors(AllowSpecificOrigins);
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllers();
