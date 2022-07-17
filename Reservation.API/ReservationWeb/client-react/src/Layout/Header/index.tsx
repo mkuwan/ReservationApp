@@ -9,7 +9,7 @@ export const Header = () => {
                 <Navbar.Brand>
                     <Image/>
                 </Navbar.Brand>
-                <big>予約がいつも空いてるクリニックへようこそ！！</big>
+                <big>予約がいつも空いてるクリニック</big>
             </Navbar>
         </>
     )

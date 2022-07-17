@@ -97,6 +97,7 @@ using (var scope = app.Services.CreateScope())
     // dotnet user-secrets set --project Reservation.API ManagerPW <pw>
     // dotnet user-secrets set --project Reservation.API ClientPW <pw>　
     // 　としてローカル環境にシークレットパスワードを作成しておく
+    //  もしくはReservation.APIを右クリックしてユーザーシークレットの管理でも設定できます
     var initialManagerPw = builder.Configuration.GetValue<string>("ManagerPW");
     var unitialClientPw = builder.Configuration.GetValue<string>("ClientPW");
 
