@@ -10,13 +10,13 @@ type UserContext = {
     token: string | null;
 }
 
-const KEY_USER_TOKEN = uuid.toString();
-const KEY_USER_LOGIN = uuid.toString();
+const KEY_USER_TOKEN = 'RESERVATION_DEMO_TOKEN';
+const KEY_USER_LOGIN = 'RESERVATION_DEMO_LOGIN';
 
 export const UserContext = createContext<UserContext>({} as UserContext);
 
 
-export  const UserProvider = ({children}: {children: ReactElement}) => {
+export const UserProvider = ({ children }: { children: ReactElement }) => {
     const sessionToken = sessionStorage.getItem(KEY_USER_TOKEN);
     const [token, setToken] = useState(sessionToken ? sessionToken : null);
 
@@ -48,6 +48,7 @@ export  const UserProvider = ({children}: {children: ReactElement}) => {
      * ログアウト
      */
     const logout = useCallback(() => {
+        setIsLogin(false);
         setUser(InitIUser);
         setIsLoading(false);
         setToken(null);
@@ -57,7 +58,7 @@ export  const UserProvider = ({children}: {children: ReactElement}) => {
 
     return (
         <UserContext.Provider value={{login, logout, isLogin, user, token}}>
-            {!isLoading && children}
+            {children}
         </UserContext.Provider>
     )
 }

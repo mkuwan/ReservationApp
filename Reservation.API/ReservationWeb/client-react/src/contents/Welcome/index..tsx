@@ -11,22 +11,30 @@ import {
     styled, Typography
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, useContext, useEffect, useState} from "react";
 import {ClientMenu} from "../RouteMenuItems/ClientMenu";
 import {RouteItems} from "../RouteMenuItems/IRouteItems";
+import {FirstMenu} from "../RouteMenuItems/FirstMenu";
+import {UserContext} from "../../contexts/UserContext";
 
 
 
 
 export const Welcome = () => {
+    const {logout, user } = useContext(UserContext);
+
     const [spacing, setSpacing] = useState(5);
     const navigate = useNavigate();
 
-    const navRegistration = ClientMenu.find(x => x.searchValue === 'registration');
+    const navRegistration = FirstMenu.find(x => x.searchValue === 'registration');
     const navRegistrationPath = navRegistration ? navRegistration.path : '/';
 
-    const navLogin = ClientMenu.find(x => x.searchValue === 'login');
+    const navLogin = FirstMenu.find(x => x.searchValue === 'login');
     const navLoginPath = navLogin ? navLogin.path : '/';
+
+    useEffect(() => {
+        logout();
+    }, []);
 
     return (
         <Grid sx={{flexGrow:1}} container alignItems={"center"}

@@ -6,6 +6,6 @@ export interface RouteItems {
     icon?: ReactNode;
     iconColor?: string;
     toolTip?: string;
-    searchValue?: string;
+    searchValue: string;
     items?: RouteItems[];
 }

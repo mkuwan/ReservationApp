@@ -5,7 +5,7 @@ export const Header = () => {
 
     return(
         <>
-            <Navbar fixed={'top'}>
+            <Navbar fixed={'top'} className={'justify-content-center'}>
                 <Navbar.Brand>
                     <Image/>
                 </Navbar.Brand>

@@ -12,6 +12,7 @@ export const FirstMenu: RouteItems[] = [
         icon: <DraftsIcon/>,
         iconColor: 'darkgreen',
         toolTip: 'Welcome!',
+        searchValue: 'welcome'
     },
     {
         path: '/welcome',
@@ -19,19 +20,22 @@ export const FirstMenu: RouteItems[] = [
         icon: <DraftsIcon/>,
         iconColor: 'darkgreen',
         toolTip: 'Welcome!',
+        searchValue: 'welcome'
     },
     {
         path: '/login',
         content: <Login/>,
         icon: <LoginRounded/>,
         iconColor: 'darkgreen',
-        toolTip: 'login'
+        toolTip: 'login',
+        searchValue: 'login'
     },
     {
         path: '/registration',
         content: <Registration/>,
         icon: <AppRegistration/>,
         iconColor: 'darkgreen',
-        toolTip: 'login'
+        toolTip: 'registration',
+        searchValue: 'registration'
     }
 ]
