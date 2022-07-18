@@ -10,6 +10,14 @@ import {Schedule as ScheduleIcon} from "@mui/icons-material";
 
 export const ClientMenu: RouteItems[] = [
     // {
+    //     path: '/',
+    //     content: <Welcome/>,
+    //     icon: <DraftsIcon/>,
+    //     iconColor: 'darkgreen',
+    //     toolTip: 'Welcome!',
+    //     searchValue: 'welcome'
+    // },
+    // {
     //     path: '/login',
     //     content: <Login/>,
     //     icon: <DraftsIcon/>,
@@ -17,14 +25,14 @@ export const ClientMenu: RouteItems[] = [
     //     toolTip: 'login',
     //     searchValue: 'login'
     // },
-    // {
-    //     path: '/registration',
-    //     content: <Registration/>,
-    //     icon: <DraftsIcon/>,
-    //     iconColor: 'darkgreen',
-    //     toolTip: '登録',
-    //     searchValue: 'registration'
-    // },
+    {
+        path: '/registration',
+        content: <Registration/>,
+        icon: <DraftsIcon/>,
+        iconColor: 'darkgreen',
+        toolTip: '登録',
+        searchValue: 'registration'
+    },
     {
         path: '/schedule',
         content: <ScheduleForClient/>,

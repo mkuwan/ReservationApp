@@ -19,7 +19,7 @@ export const ScheduleForClient = () => {
                     <Button variant={'contained'}
                             color={'success'}
                             className={'col-2 '}
-                        onClick={() => navigate('/login')}>
+                        onClick={() => navigate('/')}>
                         戻る
                     </Button>
 

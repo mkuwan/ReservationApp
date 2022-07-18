@@ -55,6 +55,12 @@ export const Login = () => {
             <h4 className={'my-5'}>ログインフォーム</h4>
             <h5>{`${user.userName}`}</h5>
 
+            <Button variant={'contained'}
+                    color={'success'}
+                    className={'col-2 '}
+                    onClick={() => navigate('/')}>
+                戻る
+            </Button>
             <Button variant={"contained"}
                     style={{color: 'black', backgroundColor: 'lightgreen'}}
                     sx={{height: 250, width: 250}}

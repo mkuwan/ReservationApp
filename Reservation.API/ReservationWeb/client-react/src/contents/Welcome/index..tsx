@@ -40,7 +40,7 @@ export const Welcome = () => {
         <Grid sx={{flexGrow:1}} container alignItems={"center"}
               justifyContent="center"
               style={{minHeight: '70vh'}} >
-            <Grid item xs={12} sm={5} >
+            <Grid item xs={12} sm={6} >
                 <Button variant={"contained"}
                         style={{color: 'black', backgroundColor: 'lightgreen'}}
                         sx={{height: 250, width: 250}}
@@ -48,7 +48,7 @@ export const Welcome = () => {
                     <Typography variant={"h4"}>初めての方</Typography>
                 </Button>
             </Grid>
-            <Grid item xs={12} sm={5} >
+            <Grid item xs={12} sm={6} >
                 <Button variant={'contained'}
                         style={{color: 'black', backgroundColor: 'deepskyblue'}}
                         sx={{height: 250, width: 250}}

@@ -13,32 +13,45 @@ const App = () => {
 
     return(
         <div className="App" >
-            <Routes>
-                <Route path={'/'} element={<Layout/>}>
-                    { FirstMenu.map((item, index) =>
-                        <Route path={item.path}
-                               element={item.content}
-                               key={index}/>
-                    )}
-                </Route>
-                if(isLogin)
-                {user.userRole === UserRoles.client ?
+            {!isLogin ? (
+                <Routes>
                     <Route path={'/'} element={<Layout/>}>
-                        { ClientMenu.map((item, index) =>
+                        { FirstMenu.map((item, index) =>
+                            <Route path={item.path}
+                                   element={item.content}
+                                   key={index}/>
+                        )}
+
+                    </Route>
+                </Routes>
+            ) : (
+                <Routes>
+                    <Route path={'/'} element={<Layout/>}>
+                        { FirstMenu.map((item, index) =>
                             <Route path={item.path}
                                    element={item.content}
                                    key={index}/>
                         )}
                     </Route>
-                    :
-                    <Route path={'/'} element={<Layout/>}>
-                        <Route path={'/manager'}/>
-                    </Route>
-                } : {
-
-            }
-            </Routes>
-
+                    {user.userRole === UserRoles.client ?
+                        <Route path={'/'} element={<Layout/>}>
+                            { ClientMenu.map((item, index) =>
+                                <Route path={item.path}
+                                       element={item.content}
+                                       key={index}/>
+                            )}
+                        </Route>
+                        :
+                        <Route path={'/'} element={<Layout/>}>
+                            <Route path={'/manager'}/>
+                        </Route>
+                    } : {
+                        <>
+                            managerページ
+                        </>
+                }
+                </Routes>
+            )}
         </div>
 
     )
